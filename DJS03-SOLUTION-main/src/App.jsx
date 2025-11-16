@@ -9,6 +9,7 @@ import Header from "./components/Header";
  * - Fetching podcast data from a remote API
  * - Managing loading and error states
  * - Search, sort, and filter functionality
+ * - Pagination with "Load More" functionality
  * - Rendering the podcast grid once data is successfully fetched
  * - Displaying a header and fallback UI during loading or error
  * @returns {JSX.Element} The rendered application interface
