@@ -10,10 +10,54 @@ body {
 
 .app-header {
   display: flex;
-  justify-content: space-between;
-  padding: 1rem;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
   background: white;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.sort-select,
+.genre-select {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: white;
+  cursor: pointer;
+}
+
+.sort-select:hover,
+.genre-select:hover {
+  border-color: #646cff;
 }
 
 .grid {
@@ -75,6 +119,8 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  padding: 3rem;
+  text-align: center;
 }
 
 .spinner {
@@ -102,5 +148,21 @@ body {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+  
+  .sort-select,
+  .genre-select {
+    width: 100%;
   }
 }
