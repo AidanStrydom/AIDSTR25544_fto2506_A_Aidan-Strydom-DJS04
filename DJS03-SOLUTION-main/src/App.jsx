@@ -71,6 +71,15 @@ export default function App() {
   const displayedPodcasts = filteredPodcasts.slice(0, displayCount);
   const hasMore = displayCount < filteredPodcasts.length;
 
+  const handleLoadMore = () => {
+  setDisplayCount((prev) => prev + 20);
+  };
+
+  // Reset display count when filters change
+  useEffect(() => {
+    setDisplayCount(20);
+  }, [searchTerm, sortOption, selectedGenre]);
+
   return (
     <>
       <Header 
@@ -105,7 +114,20 @@ export default function App() {
                 <p>No podcasts found matching your criteria.</p>
               </div>
             ) : (
-              <PodcastGrid podcasts={displayedPodcasts} genres={genres} />
+              <>
+                <PodcastGrid podcasts={displayedPodcasts} genres={genres} />
+                
+                {hasMore && (
+                  <div className="load-more-container">
+                    <button className="load-more-btn" onClick={handleLoadMore}>
+                      Load More
+                    </button>
+                    <p className="results-info">
+                      Showing {displayedPodcasts.length} of {filteredPodcasts.length} podcasts
+                    </p>
+                  </div>
+                )}
+              </>
             )}
           </>
         )}
