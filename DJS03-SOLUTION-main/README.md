@@ -1,4 +1,4 @@
-# DJS03 React Podcast Preview
+# DJS04 React Podcast Preview
 
 This project is a **React-based podcast preview application** that fetches podcast data from an external API and displays it in a responsive grid of cards. It builds upon the concepts introduced in DJS01 and DJS02 but replaces vanilla JavaScript and Web Components with a modular React architecture.
 
